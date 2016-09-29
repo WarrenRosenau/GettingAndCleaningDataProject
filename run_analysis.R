@@ -1,3 +1,7 @@
+# One time only, run the InitialSetup.R to download the source data and unzip in
+# root folder
+#source(InitialSetup.R)
+
 library(dplyr)
 
 #--------------------------------------------------------------------------------------------------
