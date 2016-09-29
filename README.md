@@ -96,10 +96,12 @@ More detail is included in the comments in run_analysis.R however the following 
 
 - Select the mean/std columns requested
 
-        Note: Instructions were not clear regarding whether only the columns ending in Mean/std were of interest or whether to include MeanFreq and the X/Y/Z specific mean/std 
-        measurements.  For completness purposes, these additional columns have been included.
+        Note: Instructions were not clear regarding whether only the columns
+        ending in Mean/std were of interest or whether to include MeanFreq 
+        and the X/Y/Z specific mean/std features.  Erring on the side of over-inclusion,
+        these additional columns have been include.
 
-- Summarize dataset by taking means of each measured value grouped by Activity and Subject
+- Summarize the dataset by taking means of each measured value grouped by Activity and Subject
 
 - Save summarized data to tidy.txt
 
