@@ -1,8 +1,18 @@
-# One time only, run the InitialSetup.R to download the source data and unzip in
-# root folder
-#source(InitialSetup.R)
-
 library(dplyr)
+
+# download source data if needed and unzip to working directory if needed
+projectDatasetUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+projectDatasetFile <- "./getdata_projectfiles_UCI_HAR_Dataset.zip"
+
+# If needed, download the zip file of the dataset 
+if (!file.exists(projectDatasetFile)) {
+        download.file(projectDatasetUrl,projectDatasetFile, method = "curl")
+}
+
+# if the data folder does not exist, create and fill it by unzipping the zip file
+if (!dir.exists("UCI HAR Dataset")) {
+        unzip(projectDatasetFile)
+}
 
 #--------------------------------------------------------------------------------------------------
 # Read shared data
@@ -31,6 +41,7 @@ features$ColumnNames <- gsub('^t', 'Time.', features$ColumnNames)
 features$ColumnNames <- gsub('tBody', 'TimeBody', features$ColumnNames)
 features$ColumnNames <- gsub('^angle', 'Angle', features$ColumnNames)
 features$ColumnNames <- gsub('mean', 'Mean', features$ColumnNames)
+features$ColumnNames <- gsub('gravityMean', 'GravityMean', features$ColumnNames)
 
 # Read train data:---------------------------------------------------
 
@@ -106,7 +117,9 @@ obj4Data <- select(tidyData,
 # create summary data set calculating means grouped by Subject and Activity
 obj5Data <- obj4Data %>%
         group_by(Activity,Subject) %>%
-        summarize_each(funs(mean),-Set)
+        summarize_each(funs(mean),-Set) %>%
+        arrange(Subject,Activity)
+
 ##################### objective 5 complete #################################
 
 # export file of the summary data set for submission
