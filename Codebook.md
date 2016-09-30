@@ -103,11 +103,11 @@ these additional columns have been included.
 
     * Full field list
 
-          * 3. Time.BodyAcc.Mean.X
+          3. Time.BodyAcc.Mean.X
           
-          * 4. Time.BodyAcc.Mean.Y
+          4. Time.BodyAcc.Mean.Y
           
-          * 5. Time.BodyAcc.Mean.Z
+          5. Time.BodyAcc.Mean.Z
           
           * 6. Time.BodyAcc.std.X
           
