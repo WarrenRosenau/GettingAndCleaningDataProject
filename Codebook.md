@@ -109,11 +109,11 @@ these additional columns have been included.
           
           5. Time.BodyAcc.Mean.Z
           
-          * 6. Time.BodyAcc.std.X
+          * 6 Time.BodyAcc.std.X
           
-          * 7. Time.BodyAcc.std.Y
+          * 7 Time.BodyAcc.std.Y
           
-          * 8. Time.BodyAcc.std.Z
+          * 8 Time.BodyAcc.std.Z
           
           * 9. Time.GravityAcc.Mean.X
           
